@@ -1,6 +1,12 @@
 
 
 def multiplica_polinomio(p:list):
+    '''
+    Função que multiplica uma lista de coeficientes de um polinomio pelo polinomio (x + 1) ([1, 1])
+    :param p: Polinomio a ser multiplicado
+    :return: Polinomio multiplicado
+    '''
+
     p2 = [1, 1]
     res = [0] * (len(p) + len(p2) - 1)
     for o1, i1 in enumerate(p):
@@ -12,6 +18,10 @@ def multiplica_polinomio(p:list):
 
 
 def divide_polinomio(p:list):
+    '''
+    Função que divide todos os coeficientes com grau maior que 0 de um polinomio por x
+    :param p: Polinomio a ser dividido
+    '''
 
     for i in range(1, len(p)):
         if p[i] == 1:
@@ -24,6 +34,10 @@ def divide_polinomio(p:list):
 
 
 def zera_dois(p:list):
+    '''
+    Zera todos os coeficientes com valor maior ou igual a 2
+    :param p: Polinomio a ser percorrido
+    '''
     for i in range(len(p)):
         if p[i] > 1:
             p[i] = 0
@@ -34,10 +48,6 @@ a = list(map(int, input().split()))
 
 a.reverse()
 
-'''
-3
-1 0 0 1
-'''
 count = 0
 
 while len(a) > 1:
@@ -54,4 +64,16 @@ while len(a) > 1:
 print(count)
 
 
+'''
+3
+1 0 0 1
 
+2
+1 0 1
+
+2
+1 0 0
+
+0
+1
+'''
